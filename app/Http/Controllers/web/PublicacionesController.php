@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Http\Controllers\web;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Menu;
+use App\Models\SubMenu;
+use App\Models\Publicacion;
+
+class PublicacionesController extends Controller
+{
+    public function cargaPublicacion($id,$idMenu)
+    {
+        $menu           = Menu::where('estado_id',1)->orderBy('orden', 'asc')->get();
+        $subMenu        = SubMenu::where('estado_id',1)->orderBy('orden', 'asc')->get();
+        $publicacion    = Publicacion::find($id);
+
+        return view('web.publicaciones.'.$publicacion->path.'',[
+            'id'            => $idMenu,
+            'menu'          => $menu,
+            'subMenu'       => $subMenu,
+            'publicacion'   => $publicacion
+        ]);
+    }
+}
