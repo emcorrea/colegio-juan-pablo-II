@@ -19,4 +19,9 @@ class Publicacion extends Model
     {
         return $this->hasMany(PublicacionDetalle::class);
     }
+
+    public function estado()
+    {
+        return $this->belongsTo(Estado::class);
+    }
 }

@@ -20,7 +20,12 @@ use App\Http\Controllers\web\PublicacionesController;
     return view('welcome');
 });*/
 
-Route::get('/',[IndexController::class,'inicio'])->name('home');
+//Route::get('/',[IndexController::class,'inicio'])->name('home');
+
+Route::controller(IndexController::class)->group(function (){
+    Route::get('/','inicio')->name('home');
+    Route::post('/envio-email-contacto','envioMailContacto')->name('envio_email_contacto');
+});
 
 Route::controller(MenuController::class)->group(function (){
     Route::get('/menu/{id}','cargaMenu')->name('menu');
