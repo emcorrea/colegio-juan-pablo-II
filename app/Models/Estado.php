@@ -18,4 +18,19 @@ class Estado extends Model
     {
         return $this->hasMany(SubMenu::class);
     }
+
+    public function parametro()
+    {
+        return $this->hasMany(Parametro::class);
+    }
+
+    public function publicacion()
+    {
+        return $this->hasMany(Publicacion::class);
+    }
+
+    public function publicacionDetalle()
+    {
+        return $this->hasMany(PublicacionDetalle::class);
+    }
 }
