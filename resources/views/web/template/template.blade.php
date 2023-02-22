@@ -137,9 +137,14 @@
   <script src={{ asset("plugins/assets/vendor/isotope-layout/isotope.pkgd.min.js") }}></script>
   <script src={{ asset("plugins/assets/vendor/swiper/swiper-bundle.min.js") }}></script>
   <script src={{ asset("plugins/assets/vendor/php-email-form/validate.js") }}></script>
-
+  
   <!-- Template Main JS File -->
   <script src={{ asset("plugins/assets/js/main.js") }}></script>
+  <script src={{ asset("plugins/js/jquery.3.6.3.js"); }}></script>
+  <script src={{ asset("plugins/bootbox/dist/bootbox.all.min.js"); }}></script>
+  <script src={{ asset("plugins/bootbox/dist/bootbox.locales.min.js"); }}></script>
+
+  @yield('main_js');
 
 </body>
 

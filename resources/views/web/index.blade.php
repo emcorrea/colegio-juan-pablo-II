@@ -77,9 +77,25 @@
                     <div class="col-md-3 d-flex" data-aos="fade-right">
                         <div class="card">
                             <div class="card-body w-100">
-                                <h5 class="card-title"><a href="{{ route('publicacion',['id' => $act->id,'idMenu' => 'home']) }}">{{ $act->nombre }}</a></h5>
+                                <h5 class="card-title">
+                                    <a 
+                                        @if ($act->path)                                            
+                                            href="{{ route('publicacion',['id' => $act->id,'idMenu' => 'home']) }}"
+                                        @endif
+                                    >
+                                    {{ $act->nombre }}
+                                    </a>
+                                </h5>
                                 <p class="card-text">{{ $act->descripcion }}</p>
-                                <div class="read-more"><a href="{{ route('publicacion',['id' => $act->id,'idMenu' => 'home']) }}"><i class="bi bi-arrow-right"></i> Leer más</a></div>
+                                <div class="read-more">
+                                    <a 
+                                        @if ($act->path)
+                                            href="{{ route('publicacion',['id' => $act->id,'idMenu' => 'home']) }}"
+                                        @endif
+                                    >
+                                        <i class="bi bi-arrow-right"></i> Leer más
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -212,4 +228,17 @@
          </div>
      </section>
      <!-- End Contacto -->
+ @endsection
+
+ @section('main_js')
+    @if ($mensaje_inicio)        
+        <script>
+            $( document ).ready(function() {
+                bootbox.alert({
+                    title: 'Atención!',
+                    message: '{{ $mensaje_inicio[0]->valor }}'
+                });
+            });
+        </script>
+    @endif
  @endsection

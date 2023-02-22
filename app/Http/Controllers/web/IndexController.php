@@ -23,12 +23,19 @@ class IndexController extends Controller
             ->take(8)
             ->orderBy('fecha', 'asc')
             ->get();
+        $parametroMensaje       = Parametro::where('nombre','BOOTBOX_INFORMATIVO_HOME')
+            ->where('estado_id',1)
+            ->skip(0)
+            ->take(1)
+            ->get()
+            ->all();
 
         return view('web.index',[
             'id'                => 'home',
             'menu'              => $menu,
             'subMenu'           => $subMenu,
-            'actualizaciones'   => $ultimasActualizaciones
+            'actualizaciones'   => $ultimasActualizaciones,
+            'mensaje_inicio'    => $parametroMensaje
         ]);
     }
 
