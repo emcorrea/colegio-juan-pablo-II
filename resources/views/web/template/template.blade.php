@@ -128,7 +128,7 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!--<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>-->
 
   <!-- Vendor JS Files -->
   <script src={{ asset("plugins/assets/vendor/aos/aos.js") }}></script>
@@ -143,6 +143,29 @@
   <script src={{ asset("plugins/js/jquery.3.6.3.js"); }}></script>
   <script src={{ asset("plugins/bootbox/dist/bootbox.all.min.js"); }}></script>
   <script src={{ asset("plugins/bootbox/dist/bootbox.locales.min.js"); }}></script>
+
+  <!--Recaptchas-->
+  @if ($recaptchaFormulario == 1){
+    <script src="https://www.google.com/recaptcha/api.js?render={{ $secret_web_recaptcha }}"></script>
+    <script>
+      document.addEventListener('submit', function(e){
+        e.preventDefault();
+          grecaptcha.ready(function() {
+            grecaptcha.execute('{{ $secret_web_recaptcha }}', {action: 'submit'}).then(function(token) {
+              let form    = e.target;
+              let input   = document.createElement('input');
+              input.type  = 'hidden';
+              input.name  = 'g-recaptcha-response';
+              input.value = token;
+              form.appendChild(input);
+              form.submit();
+            });
+          });
+      })
+    </script>
+  }
+      
+  @endif
 
   @yield('main_js');
 

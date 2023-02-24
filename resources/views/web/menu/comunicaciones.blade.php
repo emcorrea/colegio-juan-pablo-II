@@ -26,7 +26,11 @@
                             <td>{{ $pb->nombre }}</td>
                             <td>{{ $pb->descripcion }}</td>
                             <td>{{ $pb->fecha }}</td>
-                            <td class="text-center"><a href="{{ route('publicacion',['id' => $pb->id,'idMenu' => $id]) }}" class="btn btn-sm btn-success">Ver</a></td>
+                            <td class="text-center">
+                                @if ($pb->path)
+                                    <a href="{{ route('publicacion',['id' => $pb->id,'idMenu' => $id]) }}" class="btn btn-sm btn-success">Ver</a>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
