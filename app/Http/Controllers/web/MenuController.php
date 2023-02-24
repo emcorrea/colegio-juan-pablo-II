@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\SubMenu;
 use App\Models\Publicacion;
+use App\Models\Parametro;
 
 class MenuController extends Controller
 {
@@ -25,14 +26,22 @@ class MenuController extends Controller
                 ->get();
         }
 
+        $parametroRecaptcha      = Parametro::where('nombre','UTILIZA_RECAPTCHAS_FORMULARIO_CONTACTO')
+            ->where('estado_id',1)
+            ->skip(0)
+            ->take(1)
+            ->get()
+            ->all();
 
         return view('web.menu.'.$menuCargado->path.'',[
-            'id'            => $id,
-            'menu'          => $menu,
-            'subMenu'       => $subMenu,
-            'menuCargado'   => $menuCargado,
-            'contenido'     => $contenido,
-            'publicaciones' => $publicaciones
+            'id'                    => $id,
+            'menu'                  => $menu,
+            'subMenu'               => $subMenu,
+            'menuCargado'           => $menuCargado,
+            'contenido'             => $contenido,
+            'publicaciones'         => $publicaciones,
+            'recaptchaFormulario'   => $parametroRecaptcha[0]['valor'],
+            'secret_web_recaptcha'  => env('CAPTCHA_SECRET_WEB')
         ]);
     }
 }

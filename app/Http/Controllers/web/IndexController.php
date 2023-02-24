@@ -11,6 +11,7 @@ use App\Models\Parametro;
 use App\Models\LogFormularioEmailContacto;
 use App\Mail\ContactoMailController;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Http;
 
 class IndexController extends Controller
 {
@@ -30,42 +31,98 @@ class IndexController extends Controller
             ->get()
             ->all();
 
+        $parametroRecaptcha      = Parametro::where('nombre','UTILIZA_RECAPTCHAS_FORMULARIO_CONTACTO')
+            ->where('estado_id',1)
+            ->skip(0)
+            ->take(1)
+            ->get()
+            ->all();
+
         return view('web.index',[
-            'id'                => 'home',
-            'menu'              => $menu,
-            'subMenu'           => $subMenu,
-            'actualizaciones'   => $ultimasActualizaciones,
-            'mensaje_inicio'    => $parametroMensaje
+            'id'                    => 'home',
+            'menu'                  => $menu,
+            'subMenu'               => $subMenu,
+            'actualizaciones'       => $ultimasActualizaciones,
+            'mensaje_inicio'        => $parametroMensaje,
+            'recaptchaFormulario'   => $parametroRecaptcha[0]['valor'],
+            'secret_web_recaptcha'  => env('CAPTCHA_SECRET_WEB')
         ]);
     }
 
     public function envioMailContacto(Request $request)
     {
-        $parametroEmail = Parametro::where('nombre','CORREOS_FORMULARIO_HOME')
+        $parametroRecaptcha      = Parametro::where('nombre','UTILIZA_RECAPTCHAS_FORMULARIO_CONTACTO')
             ->where('estado_id',1)
             ->skip(0)
             ->take(1)
-            ->get();
+            ->get()
+            ->all();
 
-        if($parametroEmail){
-            $email          = explode(',',$parametroEmail[0]['valor']);
-            $nombre         = $request['nombre'];
-            $emailUsuario   = $request['email'];
-            $asunto         = $request['asunto'];
-            $mensaje        = $request['mensaje'];
+        if($parametroRecaptcha[0]['valor'] == 1){
+            $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify',[
+                'secret'    => env('CAPTCHA_SECRET'),
+                'response'  => $request['g-recaptcha-response']
+            ])->object();
 
+            if($response->success && $response->score >= 0.7){
+    
+                $parametroEmail = Parametro::where('nombre','CORREOS_FORMULARIO_HOME')
+                    ->where('estado_id',1)
+                    ->skip(0)
+                    ->take(1)
+                    ->get();
+        
+                if($parametroEmail){
+                    $email          = explode(',',$parametroEmail[0]['valor']);
+                    $nombre         = $request['nombre'];
+                    $emailUsuario   = $request['email'];
+                    $asunto         = $request['asunto'];
+                    $mensaje        = $request['mensaje'];
+        
+        
+                    foreach($email AS $em){
+                        Mail::to($em)->send(new ContactoMailController($nombre,$emailUsuario,$asunto,$mensaje));
+                    }
+        
+                    $logGormularioEmailContacto = new LogFormularioEmailContacto();
+                    $logGormularioEmailContacto->nombre         = $nombre;
+                    $logGormularioEmailContacto->email          = $emailUsuario;
+                    $logGormularioEmailContacto->asunto         = $asunto;
+                    $logGormularioEmailContacto->mensaje        = $mensaje;
+                    $logGormularioEmailContacto->email_receptor = $parametroEmail[0]['valor'];
+                    $logGormularioEmailContacto->save();
+                }
 
-            foreach($email AS $em){
-                Mail::to($em)->send(new ContactoMailController($nombre,$emailUsuario,$asunto,$mensaje));
+                return redirect()->route('home');
             }
+        }else{
 
-            $logGormularioEmailContacto = new LogFormularioEmailContacto();
-            $logGormularioEmailContacto->nombre         = $nombre;
-            $logGormularioEmailContacto->email          = $emailUsuario;
-            $logGormularioEmailContacto->asunto         = $asunto;
-            $logGormularioEmailContacto->mensaje        = $mensaje;
-            $logGormularioEmailContacto->email_receptor = $parametroEmail[0]['valor'];
-            $logGormularioEmailContacto->save();
+            $parametroEmail = Parametro::where('nombre','CORREOS_FORMULARIO_HOME')
+                    ->where('estado_id',1)
+                    ->skip(0)
+                    ->take(1)
+                    ->get();
+        
+            if($parametroEmail){
+                $email          = explode(',',$parametroEmail[0]['valor']);
+                $nombre         = $request['nombre'];
+                $emailUsuario   = $request['email'];
+                $asunto         = $request['asunto'];
+                $mensaje        = $request['mensaje'];
+    
+    
+                foreach($email AS $em){
+                    Mail::to($em)->send(new ContactoMailController($nombre,$emailUsuario,$asunto,$mensaje));
+                }
+    
+                $logGormularioEmailContacto = new LogFormularioEmailContacto();
+                $logGormularioEmailContacto->nombre         = $nombre;
+                $logGormularioEmailContacto->email          = $emailUsuario;
+                $logGormularioEmailContacto->asunto         = $asunto;
+                $logGormularioEmailContacto->mensaje        = $mensaje;
+                $logGormularioEmailContacto->email_receptor = $parametroEmail[0]['valor'];
+                $logGormularioEmailContacto->save();
+            }
         }
 
         return'OK';
