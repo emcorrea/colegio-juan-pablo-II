@@ -74,7 +74,7 @@
 
              <div class="row mt-5">
                 @foreach ($actualizaciones as $act)    
-                    <div class="col-md-3 d-flex" data-aos="fade-right">
+                    <div class="col-md-3 d-flex mt-3" data-aos="fade-right">
                         <div class="card">
                             <div class="card-body w-100">
                                 <h5 class="card-title">
