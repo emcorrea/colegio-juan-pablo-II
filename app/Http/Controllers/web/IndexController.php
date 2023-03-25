@@ -22,7 +22,7 @@ class IndexController extends Controller
         $ultimasActualizaciones = Publicacion::where('estado_id',1)
             ->skip(0)
             ->take(8)
-            ->orderBy('fecha', 'asc')
+            ->orderBy('fecha', 'desc')
             ->get();
         $parametroMensaje       = Parametro::where('nombre','BOOTBOX_INFORMATIVO_HOME')
             ->where('estado_id',1)

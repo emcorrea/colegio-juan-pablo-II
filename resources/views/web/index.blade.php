@@ -236,7 +236,7 @@
             $( document ).ready(function() {
                 bootbox.alert({
                     title: 'Atención!',
-                    message: '{{ $mensaje_inicio[0]->valor }} <a href="publicacion/3/6">aquí</a>'
+                    message: '{{ $mensaje_inicio[0]->valor }} <a href={{ $mensaje_inicio[0]->ruta }}>aquí</a>'
                 });
             });
         </script>

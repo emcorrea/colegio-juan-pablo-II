@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nombre',100)->unique();
             $table->string('valor',255);
             $table->string('descripcion',255);
+            $table->string('ruta',100);
             $table->unsignedBigInteger('estado_id');
 
             $table->foreign('estado_id')->references('id')->on('estados');
