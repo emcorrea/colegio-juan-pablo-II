@@ -290,7 +290,228 @@
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 portfolio-item filter-miercoles" style="position: absolute; left: 0px; top: 0px; display: none;">
-                            <i class="m-3">Sin contenido</i>
+                            <h4 class="m-3">Cuenta Cuentos</h4>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/1.jpg") }}"  class="img-fluid rounded" alt="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/2.jpg") }}"  class="img-fluid rounded" alt="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/3.jpg") }}"  class="img-fluid rounded" alt="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/4.jpg") }}"  class="img-fluid rounded" alt="4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/5.jpg") }}"  class="img-fluid rounded" alt="5">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/6.jpg") }}"  class="img-fluid rounded" alt="6">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/7.jpg") }}"  class="img-fluid rounded" alt="7">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/8.jpg") }}"  class="img-fluid rounded" alt="8">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/9.jpg") }}"  class="img-fluid rounded" alt="9">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/10.jpg") }}"  class="img-fluid rounded" alt="10">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/11.jpg") }}"  class="img-fluid rounded" alt="11">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/12.jpg") }}"  class="img-fluid rounded" alt="12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/13.jpg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/14.jpg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/15.jpg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/16.jpg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/17.jpg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/18.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/19.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/20.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/21.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/22.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/23.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/24.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/25.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/26.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/27.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/28.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/29.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/30.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex aos-init aos-animate" data-aos="fade-right">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="{{ asset("archivos/semana-libro/miercoles/31.jpeg") }}"  class="img-fluid rounded" alt="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-12 col-md-6 portfolio-item filter-jueves" style="position: absolute; left: 0px; top: 0px; display: none;">
                             <i class="m-3">Sin contenido</i>
