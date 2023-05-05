@@ -5,22 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PublicacionDetalle extends Model
+class TipoPublicacionDetalle extends Model
 {
     use HasFactory;
-
-    public function publicacion()
-    {
-        return $this->belongsTo(Publicacion::class);
-    }
 
     public function estado()
     {
         return $this->belongsTo(Estado::class);
     }
 
-    public function tipoPublicacionDetalle()
+    public function publicacionDetalle()
     {
-        return $this->belongsTo(TipoPublicacionDetalle::class);
+        return $this->hasMany(PublicacionDetalle::class);
     }
 }

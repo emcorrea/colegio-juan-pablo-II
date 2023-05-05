@@ -33,4 +33,9 @@ class Estado extends Model
     {
         return $this->hasMany(PublicacionDetalle::class);
     }
+
+    public function tipoPublicacionDetalle()
+    {
+        return $this->hasMany(TipoPublicacionDetalle::class);
+    }
 }
