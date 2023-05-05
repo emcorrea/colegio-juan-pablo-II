@@ -48,7 +48,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="{{ route('home') }}">Colegio Juan Pablo II<span>.</span></a></h1>
+        <h1><a href="{{ route('home') }}" style="font-size: 20px">Colegio Juan Pablo II<span>.</span></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -97,7 +97,7 @@
                 @endif
             </li>
           @endforeach
-          <li><a class="nav-link scrollto" href="#contacto">Contacto</a></li>
+          <li><a class="nav-link scrollto" target="_blank" href="{{ asset('archivos/documento-convivencia-escolar/reglamento-convivencia-escolar.pdf') }}">Convivencia Escolar</a></li>
           <li><a class="getstarted scrollto" href="{{ route('login') }}">Ingresar</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
