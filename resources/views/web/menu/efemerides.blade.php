@@ -11,7 +11,7 @@
             <div class="row">
                 @foreach ($publicaciones as $pb)    
                     <div class="col-md-3 d-flex mt-3" data-aos="fade-right">
-                        <div class="card">
+                        <div class="card w-100">
                             <div class="card-body w-100">
                                 <h5 class="card-title">
                                     <a 
