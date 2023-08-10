@@ -8,6 +8,7 @@ use App\Models\Menu;
 use App\Models\SubMenu;
 use App\Models\Publicacion;
 use App\Models\Parametro;
+use App\Models\Equipo;
 
 class MenuController extends Controller
 {
@@ -18,6 +19,11 @@ class MenuController extends Controller
         $subMenu        = SubMenu::where('estado_id',1)->orderBy('orden', 'asc')->get();
         $menuCargado    = Menu::find($id);
         $contenido      = explode('***',$menuCargado->contenido);
+        $equipo         = false;
+
+        if($id === '2'){
+            $equipo = Equipo::where('estado_id',1)->orderBy('orden', 'asc')->get();
+        }
 
         if($menuCargado->categoria_id){
             $publicaciones = Publicacion::where('categoria_id',$menuCargado->categoria_id)
@@ -41,6 +47,7 @@ class MenuController extends Controller
             'contenido'             => $contenido,
             'publicaciones'         => $publicaciones,
             'recaptchaFormulario'   => $parametroRecaptcha[0]['valor'],
+            'equipo'                => $equipo,
             'secret_web_recaptcha'  => env('CAPTCHA_SECRET_WEB')
         ]);
     }

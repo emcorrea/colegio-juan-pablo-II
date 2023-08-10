@@ -102,6 +102,7 @@
               <li><a class="nav-link scrollto" target="_blank" href="{{ asset('archivos/documento-convivencia-escolar/reglamento-convivencia-escolar.pdf') }}">Convivencia Escolar</a></li>
               <li><a class="nav-link scrollto" target="_blank" href="{{ asset('archivos/documento-plan-sexualidad-afectividad-2023/plan-sexualidad-afectividad-2023.pdf') }}">Plan de Sexualidad y Afectividad 2023</a></li>
               <li><a class="nav-link scrollto" target="_blank" href="{{ asset('archivos/documento-biodanza-2023/biodanza-2023.pdf') }}">Biodanza</a></li>
+              <li><a class="nav-link scrollto" target="_blank" href="{{ asset('archivos/protocolo-accidente/Protocolo_accidente_escolar.jpeg') }}">Protocolo Accidente Escolar</a></li>
             </ul>
           </li>
           <li><a class="getstarted scrollto" href="{{ route('login') }}">Ingresar</a></li>

@@ -231,14 +231,25 @@
  @endsection
 
  @section('main_js')
-    @if ($mensaje_inicio)        
-        <script>
-            $( document ).ready(function() {
-                bootbox.alert({
-                    title: 'Atención!',
-                    message: '{{ $mensaje_inicio[0]->valor }} <a href={{ $mensaje_inicio[0]->ruta }}>aquí</a>'
+    @if ($mensaje_inicio)   
+        @if($mensaje_inicio[0]->ruta)
+            <script>
+                $( document ).ready(function() {
+                    bootbox.alert({
+                        title: 'Atención!',
+                        message: '{{ $mensaje_inicio[0]->valor }}<a href={{ $mensaje_inicio[0]->ruta }}>aquí</a>'
+                    });
                 });
-            });
-        </script>
+            </script>
+        @else
+            <script>
+                $( document ).ready(function() {
+                    bootbox.alert({
+                        title: 'Atención!',
+                        message: '{{ $mensaje_inicio[0]->valor }}'
+                    });
+                });
+            </script>
+        @endif
     @endif
  @endsection
