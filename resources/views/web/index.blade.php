@@ -8,7 +8,7 @@
                  <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
                      <h1>Reconocido por el estado</h1>
                      <h2>Con mas de 30 años promoviendo nuestros valores.</h2>
-                     <a href="{{ route('login') }}" class="btn-get-started scrollto">Ingresar</a>
+                     <a href="https://proyecto.webescuela.cl/sistema/webclass/" target="_blank" class="btn-get-started scrollto"><i class="fa-solid fa-graduation-cap"></i> WebClass</a>
                  </div>
                  <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
                      <img src={{ asset('plugins/assets/img/hero-img.png') }} class="img-fluid" alt="">
@@ -151,16 +151,14 @@
              <div class="row justify-content-center">
                  <div class="col-xl-3 col-lg-6 col-md-6">
                      <div class="member" data-aos="fade-up" data-aos-delay="100">
-                         <div class="pic"><img src={{ asset('plugins/assets/img/equipo/Fernando_Padilla.jpg') }}
-                                 class="img-fluid" alt="" height="380"></div>
+                         <div class="pic"><img src={{ asset('plugins/assets/img/equipo/31.jpg') }} alt=""></div>
                          <h4>Fernando Padilla</h4>
                          <span>Sostenedor y Administrador Ejecutivo</span>
                      </div>
                  </div>
                  <div class="col-xl-3 col-lg-6 col-md-6">
                      <div class="member" data-aos="fade-up" data-aos-delay="100">
-                         <div class="pic"><img src={{ asset('plugins/assets/img/equipo/Francisca_Morales.jpeg') }}
-                                 alt="" height="410"></div>
+                         <div class="pic"><img src={{ asset('plugins/assets/img/equipo/15.jpg') }} alt=""></div>
                          <h4>Francisca Morales</h4>
                          <span>Directora</span>
                      </div>
