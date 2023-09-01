@@ -31,6 +31,10 @@ Route::controller(MenuController::class)->group(function (){
     Route::get('/menu/{id}','cargaMenu')->name('menu');
 });
 
+Route::controller(MenuController::class)->group(function (){
+    Route::get('/sub-menu/{id}','cargaSubMenu')->name('sub-menu');
+});
+
 Route::controller(PublicacionesController::class)->group(function (){
     Route::get('/publicacion/{id}/{idMenu}','cargaPublicacion')->name('publicacion');
 });

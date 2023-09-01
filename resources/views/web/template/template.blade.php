@@ -88,23 +88,17 @@
                 </a>
                 @if ($mn->es_sub_menu == 1)
                     <ul>
-                        @foreach ($subMenu as $subMn)
-                            @if ($mn->id == $subMn->menu_id)
-                                <li><a href="{{ route('menu',['id' => $mn->id]) }}">{{ $subMn->nombre }}</a></li>
-                            @endif
+                        @foreach ($mn->subMenu as $subMn)
+                          @if ($subMn->es_archivo)
+                            <li><a class="nav-link scrollto" target="_blank" href="{{ asset($subMn->path) }}">{{ $subMn->nombre }}</a></li>
+                          @else                              
+                            <li><a href="{{ route('sub-menu',['id' => $subMn->id]) }}">{{ $subMn->nombre }}</a></li>
+                          @endif
                         @endforeach
                     </ul>
                 @endif
             </li>
           @endforeach
-          <li class="dropdown"><a href="#"><span>Comunidad</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a class="nav-link scrollto" target="_blank" href="{{ asset('archivos/documento-convivencia-escolar/reglamento-convivencia-escolar.pdf') }}">Convivencia Escolar</a></li>
-              <li><a class="nav-link scrollto" target="_blank" href="{{ asset('archivos/documento-plan-sexualidad-afectividad-2023/plan-sexualidad-afectividad-2023.pdf') }}">Plan de Sexualidad y Afectividad 2023</a></li>
-              <li><a class="nav-link scrollto" target="_blank" href="{{ asset('archivos/documento-biodanza-2023/biodanza-2023.pdf') }}">Biodanza</a></li>
-              <li><a class="nav-link scrollto" target="_blank" href="{{ asset('archivos/protocolo-accidente/Protocolo_accidente_escolar.jpeg') }}">Protocolo Accidente Escolar</a></li>
-            </ul>
-          </li>
           <li><a class="getstarted scrollto" href="{{ route('login') }}">Ingresar</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
