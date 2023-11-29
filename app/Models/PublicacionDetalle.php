@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PublicacionDetalle extends Model
 {
+    protected $fillable = ['contenido', 'publicacion_id', 'tipo_publicacion_detalle_id', 'data_atributo', 'estado_id'];
     use HasFactory;
 
     public function publicacion()

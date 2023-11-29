@@ -14,6 +14,7 @@ class PublicacionesController extends Controller
 {
     public function cargaPublicacion($id,$idMenu)
     {
+        $imagenes           = [];
         $menu               = Menu::where('estado_id',1)->orderBy('orden', 'asc')->get();
         $subMenu            = SubMenu::where('estado_id',1)->orderBy('orden', 'asc')->get();
         $publicacion        = Publicacion::find($id);
@@ -27,6 +28,16 @@ class PublicacionesController extends Controller
             ->take(1)
             ->get()
             ->all();
+        
+        
+        foreach( $publicacionDetalle as $pd ) {
+            if ( $pd->tipo_publicacion_detalle_id !== 1 ) {
+
+                $rutaCarpeta    = public_path($pd->contenido);
+                $archivos       = scandir($rutaCarpeta);
+                $imagenes[ $pd->contenido ] = $archivos;
+            }
+        }
 
         return view('web.publicaciones.'.$publicacion->path.'',[
             'id'                    => $idMenu,
@@ -34,6 +45,7 @@ class PublicacionesController extends Controller
             'subMenu'               => $subMenu,
             'publicacion'           => $publicacion,
             'publicacionDetalle'    => $publicacionDetalle,
+            'imagenes'              => $imagenes,
             'recaptchaFormulario'   => $parametroRecaptcha[0]['valor'],
             'secret_web_recaptcha'  => env('CAPTCHA_SECRET_WEB')
         ]);

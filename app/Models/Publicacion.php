@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Publicacion extends Model
 {
-    protected $table = "publicaciones";
     use HasFactory;
+    protected $table = "publicaciones";
+    protected $fillable = ['nombre', 'descripcion', 'fecha', 'importante', 'path', 'categoria_id', 'user_id', 'estado_id'];
 
     public function categoria()
     {
