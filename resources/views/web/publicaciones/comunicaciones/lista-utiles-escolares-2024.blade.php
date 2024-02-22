@@ -25,11 +25,11 @@
                                 <tbody>
                                     <tr>
                                         <td>Pre-Kinder</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/Lista de utiles Pre Kinder 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/prekinder.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Kinder</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/lista de utiles kinder 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/kinder.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -46,35 +46,35 @@
                                 <tbody>
                                     <tr>
                                         <td>1ero Básico</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/Lista de utiles 1° básico 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/1ero_basico.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>2do Básico</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/Lista de utiles 2° basico 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/2do_basico.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>3ro Básico</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/Lista de utiles 3° básico 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/3ero_basico.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>4to Básico</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/Lista de utiles 4° básico 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/4to_basico.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>5to Básico</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/Lista de utiles 5° basico 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/5to_basico.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>6to Básico</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/Lista de utiles 6° basico 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/6to_basico.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>7mo Básico</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/lista de utiles 7° básico 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/7mo_basico.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>8vo Básico</td>
-                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares/lista de utiles 8° básico 2023.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
+                                        <td align="center"><a class="btn btn-sm btn-success" href="{{ asset("archivos/lista-utiles-escolares-2024/8vo_basico.docx") }}" target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
                                     </tr>
                                 </tbody>
                             </table>
