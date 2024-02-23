@@ -39,7 +39,18 @@ class PublicacionesController extends Controller
             }
         }
 
-        return view('web.publicaciones.'.$publicacion->path.'',[
+        /*return view('web.publicaciones.'.$publicacion->path.'',[
+            'id'                    => $idMenu,
+            'menu'                  => $menu,
+            'subMenu'               => $subMenu,
+            'publicacion'           => $publicacion,
+            'publicacionDetalle'    => $publicacionDetalle,
+            'imagenes'              => $imagenes,
+            'recaptchaFormulario'   => $parametroRecaptcha[0]['valor'],
+            'secret_web_recaptcha'  => env('CAPTCHA_SECRET_WEB')
+        ]);*/
+
+        return view('web.publicaciones.index',[
             'id'                    => $idMenu,
             'menu'                  => $menu,
             'subMenu'               => $subMenu,
