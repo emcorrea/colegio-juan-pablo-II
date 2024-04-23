@@ -85,7 +85,7 @@ class PublicacionesController extends Controller
 
         if ( $request->file('archivos') ) {
             
-            $directorio = 'archivos/'. strtoupper(str_replace(" ","_",$request->nombre));
+            $directorio = 'archivos/'. strtoupper(str_replace(" ","_",Str::random(5).'_'.$request->nombre));
 
             if ( !is_dir($directorio) ) {
 
@@ -131,7 +131,39 @@ class PublicacionesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $publicacion        = DB::table('publicaciones')->find($id);
+        $contenido          = DB::table('publicacion_detalles')
+            ->where('publicacion_id', $id)
+            ->where('tipo_publicacion_detalle_id', 1)
+            ->where('estado_id', 1)
+            ->get();
+
+        $publicacionDetalle = DB::table('publicacion_detalles')
+            ->where('publicacion_id', $id)
+            ->where('estado_id', 1)
+            ->get();
+        
+        $tipo = ( count($publicacionDetalle) > 1 )
+            ? DB::select('SELECT * FROM publicacion_detalles WHERE publicacion_id = ? AND tipo_publicacion_detalle_id != ?',[$id, 1])
+            : DB::select('SELECT * FROM publicacion_detalles WHERE publicacion_id = ? AND tipo_publicacion_detalle_id = ?',[$id, 1]);
+        
+        $categorias = DB::table('categorias')
+            ->where('estado_id',1)
+            ->get();
+        
+        $tiposPublicacion = DB::table('tipo_publicacion_detalles')
+            ->where('estado_id',1)
+            ->get();
+
+        return view('mantenedores.publicaciones.edit', [
+            'id'                    => $id,
+            'publicacion'           => $publicacion,
+            'publicacionDetalle'    => $publicacionDetalle,
+            'categorias'            => $categorias,
+            'tiposPublicacion'      => $tiposPublicacion,
+            'contenido'             => $contenido,
+            'tipo'                  => $tipo[0]
+        ]);
     }
 
     /**
@@ -143,7 +175,56 @@ class PublicacionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nombre         = $request->nombre;
+        $descripcion    = $request->descripcion;
+        $categoria      = $request->categoria;
+        $contenido      = $request->contenido;
+
+        DB::update('UPDATE publicaciones SET nombre = ?, descripcion = ?, categoria_id = ? WHERE id = ?', [ $nombre, $descripcion, $categoria, $id ]);
+
+        $publicacionDetalle = DB::table('publicacion_detalles')
+            ->where('publicacion_id', $id)
+            ->where('estado_id', 1)
+            ->get(); 
+        
+        foreach ($publicacionDetalle as $pd) {
+            DB::update('UPDATE publicacion_detalles SET estado_id = 2 WHERE id = ?', [ $pd->id ]);
+        }
+        
+        $publicacionDetalle = new PublicacionDetalle();
+        $publicacionDetalle->contenido                      = $contenido;
+        $publicacionDetalle->publicacion_id                 = $id;
+        $publicacionDetalle->tipo_publicacion_detalle_id    = 1;
+        $publicacionDetalle->estado_id                      = 1;
+        $publicacionDetalle->save();
+
+        if ( $request->file('archivos') ) {
+            
+            $directorio = 'archivos/'. strtoupper(str_replace(" ","_",Str::random(5).'_'.$request->nombre));
+
+            if ( !is_dir($directorio) ) {
+
+                if ( mkdir($directorio, 0777, true) ) {
+
+                    $publicacionDetalle = new PublicacionDetalle();
+                    $publicacionDetalle->contenido                      = $directorio;
+                    $publicacionDetalle->publicacion_id                 = $id;
+                    $publicacionDetalle->tipo_publicacion_detalle_id    = $request->tipo;
+                    $publicacionDetalle->estado_id                      = 1;
+                    $publicacionDetalle->save();
+                    
+                    foreach ( $request->file('archivos') as $file ) {
+            
+                        $nombreArchivo = $file->getClientOriginalName();
+                        $file->move( $directorio, $nombreArchivo );
+
+                    }
+                }
+            }
+
+        }
+
+        return redirect()->route('mantenedores.publicaciones.index');
     }
 
     /**
@@ -154,14 +235,14 @@ class PublicacionesController extends Controller
      */
     public function destroy($id)
     {
-        $publicaciones = DB::update('UPDATE publicaciones SET estado_id = 2 WHERE id = ?', [ $id ]); 
+        DB::update('UPDATE publicaciones SET estado_id = 2 WHERE id = ?', [ $id ]); 
 
         $publicacionesDetalle = DB::table('publicacion_detalles')
             ->where('publicacion_id', $id)
             ->get();
         
         foreach ( $publicacionesDetalle as $pd ) {
-            $publicacionDetalle = DB::update('UPDATE publicacion_detalles SET estado_id = 2 WHERE publicacion_id = ?', [ $pd->id ]); 
+            DB::update('UPDATE publicacion_detalles SET estado_id = 2 WHERE id = ?', [ $pd->id ]); 
         }
 
         return redirect()->route('mantenedores.publicaciones.index');

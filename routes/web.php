@@ -57,6 +57,8 @@ Route::middleware([
         Route::get('/mantenedores/publicaciones/index','index')->name('mantenedores.publicaciones.index');
         Route::get('/mantenedores/publicaciones/create','create')->name('mantenedores.publicaciones.create');
         Route::post('/mantenedores/publicaciones/store','store')->name('mantenedores.publicaciones.store');
+        Route::get('/mantenedores/publicaciones/edit/{id}','edit')->name('mantenedores.publicaciones.edit');
+        Route::post('/mantenedores/publicaciones/update/{id}','update')->name('mantenedores.publicaciones.update');
         Route::post('/mantenedores/publicaciones/destroy/{id}','destroy')->name('mantenedores.publicaciones.destroy');
     });
 });
