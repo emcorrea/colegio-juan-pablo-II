@@ -9,17 +9,17 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <!--Fontawesome-->
+        <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.min.css') }}">
+        <!--Alertify-->
+        <link rel="stylesheet" href="{{ asset('plugins/css/alertify.min.css') }}">
 
-        @wireUiScripts
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <!-- Styles -->
-        @livewireStyles
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
-        <x-notifications/>
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-menu')
 
@@ -38,8 +38,8 @@
             </main>
         </div>
 
-        @stack('modals')
-
-        @livewireScripts
+        <!--Alertify-->
+        <script src="{{ asset('plugins/js/alertify.min.js') }}"></script>
+        <script src="{{ asset('js/mantenedores.js') }}"></script>
     </body>
 </html>

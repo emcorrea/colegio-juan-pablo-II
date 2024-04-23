@@ -14,7 +14,7 @@ class PublicacionesController extends Controller
 {
     public function cargaPublicacion($id,$idMenu)
     {
-        $imagenes           = [];
+        $data               = [];
         $menu               = Menu::where('estado_id',1)->orderBy('orden', 'asc')->get();
         $subMenu            = SubMenu::where('estado_id',1)->orderBy('orden', 'asc')->get();
         $publicacion        = Publicacion::find($id);
@@ -29,26 +29,29 @@ class PublicacionesController extends Controller
             ->get()
             ->all();
         
-        
         foreach( $publicacionDetalle as $pd ) {
             if ( $pd->tipo_publicacion_detalle_id !== 1 ) {
 
                 $rutaCarpeta    = public_path($pd->contenido);
                 $archivos       = scandir($rutaCarpeta);
-                $imagenes[ $pd->contenido ] = $archivos;
+                $data[ $pd->contenido ] = $archivos;
             }
         }
 
-        /*return view('web.publicaciones.'.$publicacion->path.'',[
-            'id'                    => $idMenu,
-            'menu'                  => $menu,
-            'subMenu'               => $subMenu,
-            'publicacion'           => $publicacion,
-            'publicacionDetalle'    => $publicacionDetalle,
-            'imagenes'              => $imagenes,
-            'recaptchaFormulario'   => $parametroRecaptcha[0]['valor'],
-            'secret_web_recaptcha'  => env('CAPTCHA_SECRET_WEB')
-        ]);*/
+        if ( $id === '1' ) {
+
+            return view('web.publicaciones.comunicaciones.lista-utiles-escolares-2024',[
+                'id'                    => $idMenu,
+                'menu'                  => $menu,
+                'subMenu'               => $subMenu,
+                'publicacion'           => $publicacion,
+                'publicacionDetalle'    => $publicacionDetalle,
+                'data'                  => $data,
+                'recaptchaFormulario'   => $parametroRecaptcha[0]['valor'],
+                'secret_web_recaptcha'  => env('CAPTCHA_SECRET_WEB')
+            ]);
+        }
+
 
         return view('web.publicaciones.index',[
             'id'                    => $idMenu,
@@ -56,7 +59,7 @@ class PublicacionesController extends Controller
             'subMenu'               => $subMenu,
             'publicacion'           => $publicacion,
             'publicacionDetalle'    => $publicacionDetalle,
-            'imagenes'              => $imagenes,
+            'data'                  => $data,
             'recaptchaFormulario'   => $parametroRecaptcha[0]['valor'],
             'secret_web_recaptcha'  => env('CAPTCHA_SECRET_WEB')
         ]);

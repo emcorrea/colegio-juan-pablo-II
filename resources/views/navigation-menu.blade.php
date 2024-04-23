@@ -5,14 +5,14 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('mantenedores.publicaciones.index') }}">
                         <img src="{{ asset("plugins/assets/img/logo/Logo.png") }}" alt="" width="50" height="50">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('mantenedores.publicaciones.index') }}" :active="request()->routeIs('mantenedores.publicaciones.index')">
                         {{ __('Publicaciones') }}
                     </x-jet-nav-link>
                 </div>

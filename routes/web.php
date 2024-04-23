@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\web\IndexController;
 use App\Http\Controllers\web\MenuController;
 use App\Http\Controllers\web\PublicacionesController;
+use App\Http\Controllers\mantenedores\PublicacionesController as MantenedoresPublicacionesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -50,4 +52,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::controller(MantenedoresPublicacionesController::class)->group(function (){
+        Route::get('/mantenedores/publicaciones/index','index')->name('mantenedores.publicaciones.index');
+        Route::get('/mantenedores/publicaciones/create','create')->name('mantenedores.publicaciones.create');
+        Route::post('/mantenedores/publicaciones/store','store')->name('mantenedores.publicaciones.store');
+        Route::post('/mantenedores/publicaciones/destroy/{id}','destroy')->name('mantenedores.publicaciones.destroy');
+    });
 });

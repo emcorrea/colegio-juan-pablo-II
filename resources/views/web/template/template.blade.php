@@ -90,11 +90,11 @@
                     <ul>
                         <li class="dropdown"><a href="#"><span>Manuales y Reglamentos</span> <i class="bi bi-chevron-right"></i></a>
                           <ul>
-                            <li><a href="{{ asset('archivos/Manuales-reglamentos/Plan_Convivencia_Escolar_2023_PCE.docx') }}">Plan de Convivencia Escolar</a></li>
-                            <li><a href="{{ asset('archivos/Manuales-reglamentos/Plan_de_formacion_Ciudadana_2023.docx') }}">Plan de Formación Ciudadana</a></li>
-                            <li><a href="{{ asset('archivos/Manuales-reglamentos/Plan_de_Inclusion_2023.pdf') }}" target="_blank">Plan de Inclusión</a></li>
-                            <li><a href="{{ asset('archivos/Manuales-reglamentos/Plan_Integral_de_Seguridad_Escolar_2023.docx') }}">Plan Integral de Seguridad Escolar</a></li>
-                            <li><a href="{{ asset('archivos/Manuales-reglamentos/Proyecto_Educativo_INSTITUCIONAL.pdf') }}" target="_blank">Proyecto Educativo Institucional</a></li>
+                            <li><a href="{{ asset('plugins/assets/img/comunidad/Plan-Convivencia-Escolar-2023.docx') }}">Plan de Convivencia Escolar</a></li>
+                            <li><a href="{{ asset('plugins/assets/img/comunidad/Plan-de-formacion-Ciudadana-2023.docx') }}">Plan de Formación Ciudadana</a></li>
+                            <li><a href="{{ asset('plugins/assets/img/comunidad/Plan-de-Inclusión-2023.pdf') }}" target="_blank">Plan de Inclusión</a></li>
+                            <li><a href="{{ asset('plugins/assets/img/comunidad/Plan-Integral-de-Seguridad-Escolar-2023.docx') }}">Plan Integral de Seguridad Escolar</a></li>
+                            <li><a href="{{ asset('plugins/assets/img/comunidad/Proyecto-Educativo-INSTITUCIONAL.pdf') }}" target="_blank">Proyecto Educativo Institucional</a></li>
                           </ul>
                         </li>
                         @foreach ($mn->subMenu as $subMn)

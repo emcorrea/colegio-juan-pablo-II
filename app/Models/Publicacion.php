@@ -25,4 +25,9 @@ class Publicacion extends Model
     {
         return $this->belongsTo(Estado::class);
     }
+
+    public function usuario()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

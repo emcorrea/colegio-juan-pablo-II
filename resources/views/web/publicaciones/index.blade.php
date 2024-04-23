@@ -12,33 +12,60 @@
                     <p>{{ $publicacionDetalle[0]->contenido }}</p>
                 </div>
             </div>
-            <div class="row gy-4 mt-3">
-                <section id="portfolio" class="portfolio section-bg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <ul id="portfolio-flters">
-                                    <li data-filter="*" class="filter-active">Todas</li>
-                                </ul>
+            @foreach ($publicacionDetalle as $pd)
+                @if ( $pd->tipo_publicacion_detalle_id === 2 )        
+
+                    <div class="row gy-4 mt-3">
+                        <section id="portfolio" class="portfolio section-bg">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <ul id="portfolio-flters">
+                                            <li data-filter="*" class="filter-active">Todas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row portfolio-container" data-aos="fade-up">
+                                    @foreach ($data as $key => $item)    
+                                        @foreach ($item as $dt)                       
+                                            <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $key }}">
+                                                <div class="portfolio-wrap">
+                                                    <img src="{{ asset($key.'/'. $dt) }}" class="img-fluid" alt="">
+                                                    <div class="portfolio-links">
+                                                        <a href="{{ asset($key.'/'. $dt) }}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="fas fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div> 
+                        </section>
+                    </div>
+                
+                @elseif( $pd->tipo_publicacion_detalle_id === 4 )
+
+                    @foreach ($data as $keyDt => $dt)                        
+                        <div class="row gy-4 mt-3">
+                            <div class="col-12">
+                                <embed src="{{ asset($keyDt.'/'.$dt[2]) }}" type="application/pdf" width="100%" height="600px" />
                             </div>
                         </div>
-                        <div class="row portfolio-container" data-aos="fade-up">
-                            @foreach ($imagenes as $key => $item)    
-                                @foreach ($item as $imagen)                       
-                                    <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $key }}">
-                                        <div class="portfolio-wrap">
-                                            <img src="{{ asset($key.'/'. $imagen) }}" class="img-fluid" alt="">
-                                            <div class="portfolio-links">
-                                                <a href="{{ asset($key.'/'. $imagen) }}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="fas fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            @endforeach
+                    @endforeach
+                
+                @elseif( $pd->tipo_publicacion_detalle_id === 5 )
+
+                    @foreach ($data as $keyDt => $dt)                        
+                        <div class="row gy-4 mt-3">
+                            <div class="col-12 text-center">
+                                <img src="{{ asset($keyDt.'/'.$dt[2]) }}" />
+                            </div>
                         </div>
-                    </div> 
-                </section>
-            </div>
+                    @endforeach
+
+                @endif
+
+            @endforeach
         </div>
     </section>
 @endsection
